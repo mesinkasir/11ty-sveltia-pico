@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: adamdjbrett/11ty-sveltia-pico
+  repo: mesinkasir/11ty-sveltia-pico
   branch: main
 
 # The folder used to store uploaded images

@@ -1,0 +1,25 @@
+ <section>
+        <hgroup>
+          <h3>{{metadata.work.info}}</h3>
+          <p></p>
+        </hgroup>
+        <ul>
+          {% for w in metadata.work.list %}<li>
+            <a href="{{w.url}}">{{w.company}}</a>
+            <span>
+              <small> | <i>{{w.position}}</i>
+              </small>
+            </span>
+            <p>
+              <small>{{w.start}}</small>
+              <br> {{w.text}}
+            </p>
+          </li>{% endfor %}
+        </ul>
+        <p>
+          <small>
+            {{metadata.work.info}}
+          </small>
+        </p>
+      </section>
+      <hr>

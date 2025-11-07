@@ -1,0 +1,28 @@
+<section>
+    <hgroup>
+        <h3>{{ work.title }}</h3>
+        <p></p>
+    </hgroup>
+    <ul>
+        {% for item in work.list %}
+        <li>
+            <a href="{{ item.url }}">{{ item.company }}</a>
+            <span>
+                <small> | <i>{{ item.position }}</i>
+                </small>
+            </span>
+            <p>
+                <small>{{ item.start }}</small>
+                <br> 
+                {{ item.text | md | safe }}
+            </p>
+        </li>
+        {% endfor %}
+    </ul>
+    <p>
+        <small> 
+            {{ work.info | md | safe }}
+        </small>
+    </p>
+</section>
+<hr>

@@ -1,0 +1,19 @@
+---
+layout: base.njk
+---
+	    <section>
+        <hgroup>
+          <h1>{{title}}</h1>
+          <p>... {{description}}</p>
+        </hgroup>
+        <ul>{% for f in collections.posts %}
+          <li>
+            <a href="{{f.url}}">{{f.data.title}}</a>
+            <small> <time datetime="{{ f.date | htmlDateString }}">{{ f.date | readableDate("dd LLLL yyyy") }} </time></small>
+            <p>
+              <i>{{f.data.description}}</i>
+            </p>
+          </li>{% endfor %}
+        </ul>
+      </section>
+      <hr>

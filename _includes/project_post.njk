@@ -1,0 +1,32 @@
+---
+layout: base.njk
+---
+<div class="container">
+  {% if image %}<section>
+    <img src="{{image}}" alt="{{title}}" width="100%" height="100%" loading="lazy" style="padding-bottom: 20px;">
+  </section>{% endif %}
+  <section>
+    <hgroup>
+      <h1>{{title}}</h1>
+      <p>Published on: <time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time></p>
+      <p>
+        <em>{{description}}</em>
+      </p>
+    </hgroup>
+  </section>
+  <hr>
+  <section>
+    {{content|safe}}
+  </section>
+  <hr>
+  <section>
+    <details>
+      <summary>Keywords</summary>
+      {%- for tag in tags | filterTagList %}{%- set tagUrl %}/tags/{{ tag | slugify }}/{% endset %}
+	  <p>
+        <a class="secondary" href="{{ tagUrl }}"> {{ tag }} </a>
+      </p>
+      {%- endfor %}
+    </details>
+  </section>
+</div>

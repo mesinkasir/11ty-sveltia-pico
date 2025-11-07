@@ -1,0 +1,14 @@
+      <section>
+        <hgroup>
+          <h1>{{title}}</h1>
+          <p>... {{description}}</p>
+        </hgroup>
+        <div>{{content|safe}}</div>
+      <details open=""><summary><u>
+        {{blockquote.title}}</u>: {{blockquote.description}}</summary>
+        <blockquote>{{blockquote.text}}
+          <footer><cite>{{blockquote.footer}}</cite></footer>
+        </blockquote>
+        </details>
+      </section>
+      <hr>

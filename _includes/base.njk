@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+<meta name="viewport" content="width=device-width">
+{% include "partials/seo.njk" %}
+</head>
+<body>
+<a href="#main" id="skip-link" class="visually-hidden">Skip to main content</a>
+{% include "partials/header.njk" %}
+<main class="container" id="main">
+{{ content | safe }}
+</main>
+{% include "partials/footer.njk" %}
+<script src="/js/script.js"></script>
+</body>
+</html> 

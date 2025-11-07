@@ -1,0 +1,16 @@
+  <section>
+        <hgroup>
+          <h3>{{featured_post.title}}</h3>
+          <p>{{featured_post.descirption}}</p>
+        </hgroup>
+        <ul>{% for post in collections.posts | featuredPosts | limit:3 %}
+          <li>
+            <a href="{{f.url}}">{{f.data.title}}</a>
+            <small> {{ f.date | readableDate("LLLL yyyy") }} </small>
+            <p>
+              <i>{{f.description}}</i>
+            </p>
+          </li>{% endfor %}
+        </ul>
+      </section>
+      <hr>

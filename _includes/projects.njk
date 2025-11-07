@@ -1,0 +1,43 @@
+---
+layout: base.njk
+---
+<section>
+    <hgroup>
+        <h1>{{title}}</h1>
+        <p>... {{description}}</p>
+    </hgroup>
+    <ul>
+        {% for p in collections.projects %}
+        <li>
+            <a href="{{p.url}}">{{p.data.title}}</a>
+            <small> <time datetime="{{ p.date | htmlDateString }}">{{ p.date | readableDate("dd LLLL yyyy") }} </time></small>
+            <p>
+                <i>{{p.data.description}}</i>
+                <br>
+                <span>
+                    <small>
+                        <b>keys:</b>
+                    </small>
+                </span>
+                
+                {% if p.data.tags %}
+                    {% for tag in p.data.tags %}
+                        {% if tag !== 'projects' and tag !== 'all' %} 
+                            {% set tagUrl = "/tags/" + tag | slug + "/" %}                            
+                            <span class="key">
+                                <small>
+                                    <a href="{{ tagUrl }}">{{ tag }}</a>
+                                    {% if not loop.last %}
+                                        / 
+                                    {% endif %}
+                                </small>
+                            </span>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </p>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+<hr>
